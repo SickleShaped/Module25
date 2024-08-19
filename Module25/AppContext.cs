@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Module25.EntityModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,9 +12,11 @@ namespace Module25
     {
         // Объекты таблицы Users
         public DbSet<User> Users { get; set; }
+        public DbSet<Book> Books { get; set; }
 
         public AppContext()
         {
+            Database.EnsureDeleted();
             Database.EnsureCreated();
         }
 
